@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    env_file:
+      - .dev.env
+
+    restart: always
+    ports:
+      - "5433:5432"
+
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8005:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .dev.env
+    container_name: drf
+volumes:
+  postgres_data:
