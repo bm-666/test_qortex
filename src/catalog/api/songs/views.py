@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema, extend_schema_view
 
 from catalog.api.songs.request import SongCreateRequest
-from catalog.api.songs.response import SongResponse
-from catalog.api.songs.service.song_api_service import SongApiService
+
+from catalog.api.songs.service.songs_api_service import SongApiService
 from catalog.schemas.song_schemas import SongReadSchema
 
 
@@ -30,7 +30,7 @@ from catalog.schemas.song_schemas import SongReadSchema
             "- Возвращает созданную песню в формате `SongReadSchema`."
         ),
         request=SongCreateRequest,
-        responses={201: SongResponse},
+        responses={201: SongReadSchema},
         tags=["songs"],
     )
 )

@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from catalog.api.albums.request import AlbumCreateRequest, AlbumSongRequest
-from catalog.api.albums.service.album_api_service import AlbumApiService
+from catalog.api.albums.service.albums_api_service import AlbumApiService
 from catalog.schemas.album_schemas import AlbumReadSchema
 
 

@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema, extend_schema_view
 
 from catalog.api.artists.request import ArtistCreateRequest
-from catalog.api.artists.response import ArtistCreateResponse
 from catalog.api.artists.service.artists_api_service import ArtistsAPIService
 from catalog.schemas.artist_schemas import ArtistReadSchema
 

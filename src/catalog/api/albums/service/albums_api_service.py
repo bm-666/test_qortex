@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from catalog.schemas.album_song_schemas import AlbumSongCreateSchema, AlbumSongReadSchema
 from catalog.schemas.album_schemas import AlbumCreateSchema, AlbumReadSchema
-from catalog.services.album_service import AlbumsService
+from catalog.services.albums_service import AlbumsService
 from catalog.services.album_songs_service import AlbumSongsService
 from catalog.services.songs_service import SongsService
 
